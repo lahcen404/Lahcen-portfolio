@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const menuOpenIcon = document.getElementById('menu-open-icon');
     const menuCloseIcon = document.getElementById('menu-close-icon');
+    const closeMenuButtonInside = document.getElementById('close-menu-button-inside'); 
     const mobileLinks = document.querySelectorAll('.mobile-link');
     const typedTextSpan = document.querySelector(".typing");
     const navLinks = document.querySelectorAll('.nav-link');
@@ -84,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileMenuButton) {
         mobileMenuButton.addEventListener('click', toggleMenu);
     }
+    if (closeMenuButtonInside) {
+        closeMenuButtonInside.addEventListener('click', toggleMenu);
+    }
     mobileLinks.forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
@@ -95,16 +99,19 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const observer = new IntersectionObserver((entries) => {
+        let lastActiveId = null;
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const activeId = entry.target.id;
-                navLinks.forEach(link => {
-                    // Check if href exists before accessing it
-                    if (link.getAttribute('href')) {
-                        const linkHref = link.getAttribute('href').substring(1);
-                        link.classList.toggle('active', linkHref === activeId);
-                    }
-                });
+                lastActiveId = entry.target.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href')) {
+                const linkHref = link.getAttribute('href').substring(1);
+                // Use lastActiveId to only have one active link at a time
+                const isActive = linkHref === lastActiveId;
+                link.classList.toggle('active', isActive);
             }
         });
     }, observerOptions);

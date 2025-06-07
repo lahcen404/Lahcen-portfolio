@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lahcen Ait Maskour - Full Stack Developer</title>
+    
     <link rel="icon" type="image/png" href="favicon.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -25,7 +27,10 @@
     <div id="main-content" class="hidden">
         <header id="header" class="glass-header fixed top-0 left-0 right-0 z-40">
             <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-                <a href="#home" class="text-2xl font-bold gradient-text">LAH.</a>
+                
+                <a href="#home">
+                    <img src="logo.png" alt="Logo" class="h-8 w-auto"> 
+                </a>
                 
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium" style="color: var(--text-secondary);">
                     <a href="#home" class="nav-link">Home</a>
@@ -49,7 +54,14 @@
                 </div>
             </nav>
             
-            <div id="nav-menu" class="hidden md:hidden fixed inset-0 z-30 transition-opacity duration-300">
+            <div id="nav-menu" class="hidden fixed inset-0 z-50 transition-opacity duration-300">
+                
+                <button id="close-menu-button-inside" class="absolute top-5 right-7 p-2 text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                
                 <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl font-medium">
                     <a href="#home" class="nav-link mobile-link">Home</a>
                     <a href="#about" class="nav-link mobile-link">About</a>
@@ -107,7 +119,7 @@
             
             <section id="skills" class="py-32">
                  <div class="container mx-auto px-6">
-                    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Skills</h2>
+                    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Core Competencies</h2>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
                             <div class="spotlight"></div>
@@ -155,7 +167,7 @@
             
             <section id="projects" class="py-32" style="background: var(--bg-primary);">
                 <div class="container mx-auto px-6">
-                    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Projects</h2>
+                    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Featured Projects</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="project-card rounded-2xl" data-aos="fade-up">
                             <div class="project-image-container rounded-t-2xl relative">
@@ -311,7 +323,7 @@
             
             <section id="contact" class="py-32" style="background: var(--bg-primary);">
                 <div class="container mx-auto px-6">
-                     <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Contact me</h2>
+                     <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Get In Touch</h2>
                      <div class="max-w-3xl mx-auto rounded-lg" data-aos="fade-up" data-aos-delay="100">
                         <form action="https://formspree.io/f/xgvyobjv" method="POST" id="contact-form" class="contact-terminal p-6 space-y-4 rounded-lg">
                             <div class="contact-terminal-header -m-6 mb-4 p-3 flex items-center gap-2 rounded-t-lg">

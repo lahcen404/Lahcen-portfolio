@@ -1,5 +1,3 @@
-/* style.css */
-
 /* SCSS-like Custom Styles & CSS Variables */
 :root {
     --accent-primary: #3b82f6;
@@ -99,11 +97,13 @@ body {
     100% { background-position: -150% 0; }
 }
 #nav-menu {
-    background-color: rgba(17, 24, 39, 0.9); 
+    background-color: rgba(17, 24, 39, 0.95); 
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
-.dark #nav-menu { background-color: rgba(17, 24, 39, 0.9); }
-.light #nav-menu { background-color: rgba(255, 255, 255, 0.9); }
+.dark #nav-menu { background-color: rgba(17, 24, 39, 0.95); }
+.light #nav-menu { background-color: rgba(244, 247, 252, 0.95); }
+
 .nav-link {
     position: relative;
     transition: color 0.3s;
@@ -203,12 +203,6 @@ body {
 }
 .skill-category-card:hover .spotlight { opacity: 1; }
 
-
-/* *
- * CHANGES START HERE: Competency badges (.skill-item) reverted to original style
- *
- */
-
 .skill-item {
     display: flex;
     align-items: center;
@@ -264,27 +258,19 @@ body {
     transform: translateY(0);
 }
 
-/*
- *
- * CHANGES HERE: Project badges (.tech-badge) keep the new gradient style
- *
- */
 .tech-badge {
     font-size: 0.75rem; /* 12px */
     font-weight: 600;
     padding: 0.25rem 0.75rem; /* py-1 px-3 */
     border-radius: 9999px;
     color: white;
-    /* Generic cool gradient for all project badges */
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
-/* This removes the default Tailwind background/text colors that were overriding the new style */
 .dark .tech-badge {
     color: white;
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
 }
-
 
 /* --- TIMELINE SECTION --- */
 .timeline::before {
