@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- GALAXY PARTICLES (Interactive) ---
     function initParticles(isDark) {
-        const color = isDark ? "#4b5563" : "#d1d5db";
+        const color = isDark ? "#4b5" : "#d1d";
         const particlesElement = document.getElementById('particles-js');
         if (particlesElement && window.particlesJS) {
             particlesJS('particles-js', {
