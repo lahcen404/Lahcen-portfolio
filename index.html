@@ -19,17 +19,20 @@
 </head>
 <body class="dark-theme">
 
+    <!-- Loader Screen -->
     <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4">
         <div class="spinner"></div>
         <p id="loader-text" class="mt-4 text-sm tracking-widest"></p>
     </div>
 
     <div id="main-content" class="hidden">
+        <!-- Header/Navigation -->
         <header id="header" class="glass-header fixed top-0 left-0 right-0 z-40">
             <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
                 
                 <a href="#home">
-                    <img src="logo.png" alt="Logo" class="h-8 w-auto"> 
+                    <!-- Using a placeholder image for the logo -->
+                    <img src="https://placehold.co/32x32/111827/F9FAFB?text=LAM" alt="Logo" class="h-8 w-auto"> 
                 </a>
                 
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium" style="color: var(--text-secondary);">
@@ -43,9 +46,11 @@
 
                 <div class="flex items-center gap-2">
                      <button id="theme-toggle" class="p-2 rounded-full focus:outline-none" style="color: var(--text-primary);">
-                        <svg id="theme-icon-light" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        <svg id="theme-icon-dark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                    </button>
+                         <!-- Light Icon (Sun) -->
+                         <svg id="theme-icon-light" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                         <!-- Dark Icon (Moon) -->
+                         <svg id="theme-icon-dark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                     </button>
                     
                     <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none" style="color: var(--text-primary);">
                         <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -74,6 +79,7 @@
         </header>
 
         <main>
+            <!-- Hero Section -->
             <section id="home" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
                 <div id="particles-js" class="absolute inset-0 z-0"></div>
                 <div class="relative z-10 p-6" data-aos="fade-up">
@@ -86,94 +92,115 @@
                 </div>
             </section>
             
+            <!-- About Section -->
             <section id="about" class="py-32" style="background: var(--bg-primary);">
                 <div class="container mx-auto px-6">
                     <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
                         <div class="lg:w-1/3" data-aos="fade-right">
                             <div class="profile-picture-container relative w-64 h-64 lg:w-80 lg:h-80 mx-auto rounded-full p-1">
-                               <img src="97.png" alt="Lahcen Ait Maskour" class="rounded-full w-full h-full object-cover border-4" style="border-color: var(--bg-secondary);" onerror="this.onerror=null;this.src='https://placehold.co/320x320/111827/F9FAFB?text=LAH';">
+                               <img src="./97.png" alt="Lahcen Ait Maskour" class="rounded-full w-80 h-full object-cover border-4" style="border-color: var(--bg-secondary);" onerror="this.onerror=null;this.src='https://placehold.co/320x320/111827/F9FAFB?text=LAH';">
                             </div>
                         </div>
                         <div class="lg:w-1/2 text-center lg:text-left" data-aos="fade-left" data-aos-delay="200">
                              <h2 class="text-4xl font-bold mb-4 gradient-text">About Me</h2>
                              <p class="text-lg mb-6" style="color: var(--text-secondary);">
-                                Passionate Full Stack Developer with solid programming skills acquired through my studies and practical experience. Curious and motivated, I am looking for an opportunity to deepen my knowledge and contribute to innovative projects, drawing on my mastery of Agile/Scrum methodologies and my project management skills.
+                                 Passionate Full Stack Developer with solid programming skills acquired through my studies and practical experience. Curious and motivated, I am looking for an opportunity to deepen my knowledge and contribute to innovative projects, drawing on my mastery of Agile/Scrum methodologies and my project management skills.
                             </p>
                              <div class="flex justify-center lg:justify-start flex-wrap gap-4">
-                                <a href="https://github.com/lahcen404" target="_blank" class="flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-secondary);">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                                    GitHub
-                                </a>
-                                <a href="https://www.linkedin.com/in/lahcen-ait-maskour-32716422b/" target="_blank" class="flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-secondary);">
-                                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-                                    LinkedIn
-                                </a>
-                                <a href="CV Lahcen Dev.pdf" download="CV-Lahcen-Ait-Maskour.pdf" class="py-4 px-5 rounded-full font-bold text-sm text-white transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));">
-                                    Download CV
+                                 <a href="https://github.com/lahcen404" target="_blank" class="flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-secondary);">
+                                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                                      GitHub
                                  </a>
+                                 <a href="https://www.linkedin.com/in/lahcen-ait-maskour-32716422b/" target="_blank" class="flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-secondary);">
+                                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                                      LinkedIn
+                                 </a>
+                                 <a href="CV Lahcen Dev.pdf" download="CV-Lahcen-Ait-Maskour.pdf" class="py-4 px-5 rounded-full font-bold text-sm text-white transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));">
+                                      Download CV
+                                    </a>
                              </div>
                         </div>
                     </div>
                 </div>
             </section>
             
+            <!-- Skills Section -->
             <section id="skills" class="py-32">
                  <div class="container mx-auto px-6">
-                    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Skills</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
-                            <div class="spotlight"></div>
-                            <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Frontend</h3>
-                            <div class="flex flex-wrap justify-center gap-3">
-                                <span class="skill-item" style="--hover-color: #DD0031;"><img src="https://img.icons8.com/color/48/angularjs.png" alt="Angular" class="w-5 h-5"/>Angular</span>
-                                <span class="skill-item" style="--hover-color: #F7DF1E;"><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript" class="w-5 h-5"/>JavaScript</span>
-                                <span class="skill-item" style="--hover-color: #3178C6;"><img src="https://img.icons8.com/color/48/typescript.png" alt="TypeScript" class="w-5 h-5"/>TypeScript</span>
-                                <span class="skill-item" style="--hover-color: #E34F26;"><img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML5" class="w-5 h-5"/>HTML5</span>
-                                <span class="skill-item" style="--hover-color: #1572B6;"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS3" class="w-5 h-5"/>CSS3</span>
-                                <span class="skill-item" style="--hover-color: #06B6D4;"><img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind CSS" class="w-5 h-5"/>Tailwind CSS</span>
-                                <span class="skill-item" style="--hover-color: #7952B3;"><img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap" class="w-5 h-5"/>Bootstrap</span>
-                                <span class="skill-item" style="--hover-color: #3f51b5;"><img src="https://img.icons8.com/color/48/material-ui.png" alt="Material UI" class="w-5 h-5"/>Material UI</span>
-                            </div>
-                        </div>
-                         <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
+                     <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Skills</h2>
+                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                         <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
                              <div class="spotlight"></div>
-                             <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Backend</h3>
+                             <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Frontend</h3>
                              <div class="flex flex-wrap justify-center gap-3">
-                                <span class="skill-item" style="--hover-color: #f89820;"><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png" alt="Java" class="w-5 h-5"/>Java/JEE</span>
-                                <span class="skill-item" style="--hover-color: #6DB33F;"><img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring" class="w-5 h-5"/>SpringBoot</span>
-                                <span class="skill-item" style="--hover-color: #6DB33F;"><img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring Security" class="w-5 h-5"/>Spring Security</span>
-                                <span class="skill-item" style="--hover-color: #e84d1f;"><img src="https://img.icons8.com/?size=100&id=rHpveptSuwDz&format=png&color=000000" alt="JWT" class="w-5 h-5"/>JWT Security</span>
-                                <span class="skill-item" style="--hover-color: #4479A1;"><img src="https://img.icons8.com/color/48/mysql-logo.png" alt="MySQL" class="w-5 h-5"/>MySQL</span>
-                                <span class="skill-item" style="--hover-color: #CC2927;"><img src="https://img.icons8.com/color/48/microsoft-sql-server.png" alt="SQL Server" class="w-5 h-5"/>MS SQL Server</span>
-                            </div>
-                        </div>
-                        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="300">
-                             <div class="spotlight"></div>
-                             <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Tools & Methods</h3>
-                            <div class="flex flex-wrap justify-center gap-3">
-                                <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/git.png" alt="Git" class="w-5 h-5"/>Git </span>
-                                <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/github.png" alt="Git" class="w-5 h-5"/>GitHub</span>
-                                <span class="skill-item" style="--hover-color: #C71A36;"><img src="https://img.icons8.com/?size=100&id=t5FJr3NzrPSm&format=png&color=000000" alt="Maven" class="w-5 h-5"/>Maven</span>
-                                <span class="skill-item" style="--hover-color: #0052CC;"><img src="https://img.icons8.com/color/48/jira.png" alt="Jira" class="w-5 h-5"/>Jira</span>
-                                <span class="skill-item" style="--hover-color: #2684FF;"><img src="https://img.icons8.com/color/48/trello.png" alt="Trello" class="w-5 h-5"/>Trello</span>
-                                <span class="skill-item" style="--hover-color: #F24E1E;"><img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma" class="w-5 h-5"/>Figma</span>
-                                <span class="skill-item" style="--hover-color: #2496ED;"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker" class="w-5 h-5"/>Docker</span>
-                                 <span class="skill-item" style="--hover-color: #25A162;"><img src="https://img.icons8.com/?size=100&id=w5Pvrwrm1sCt&format=png&color=000000" alt="JUnit" class="w-5 h-5"/>JUnit</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                 <span class="skill-item" style="--hover-color: #DD0031;"><img src="https://img.icons8.com/color/48/angularjs.png" alt="Angular" class="w-5 h-5"/>Angular</span>
+                                 <span class="skill-item" style="--hover-color: #F7DF1E;"><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript" class="w-5 h-5"/>JavaScript</span>
+                                 <span class="skill-item" style="--hover-color: #3178C6;"><img src="https://img.icons8.com/color/48/typescript.png" alt="TypeScript" class="w-5 h-5"/>TypeScript</span>
+                                 <span class="skill-item" style="--hover-color: #E34F26;"><img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML5" class="w-5 h-5"/>HTML5</span>
+                                 <span class="skill-item" style="--hover-color: #1572B6;"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS3" class="w-5 h-5"/>CSS3</span>
+                                 <span class="skill-item" style="--hover-color: #06B6D4;"><img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind CSS" class="w-5 h-5"/>Tailwind CSS</span>
+                                 <span class="skill-item" style="--hover-color: #7952B3;"><img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap" class="w-5 h-5"/>Bootstrap</span>
+                                 <span class="skill-item" style="--hover-color: #3f51b5;"><img src="https://img.icons8.com/color/48/material-ui.png" alt="Material UI" class="w-5 h-5"/>Material UI</span>
+                             </div>
+                         </div>
+                          <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
+                               <div class="spotlight"></div>
+                               <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Backend</h3>
+                               <div class="flex flex-wrap justify-center gap-3">
+                                 <span class="skill-item" style="--hover-color: #f89820;"><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png" alt="Java" class="w-5 h-5"/>Java/JEE</span>
+                                 <span class="skill-item" style="--hover-color: #6DB33F;"><img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring" class="w-5 h-5"/>SpringBoot</span>
+                                 <span class="skill-item" style="--hover-color: #6DB33F;"><img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring Security" class="w-5 h-5"/>Spring Security</span>
+                                 <span class="skill-item" style="--hover-color: #e84d1f;"><img src="https://img.icons8.com/?size=100&id=rHpveptSuwDz&format=png&color=000000" alt="JWT" class="w-5 h-5"/>JWT Security</span>
+                                 <span class="skill-item" style="--hover-color: #4479A1;"><img src="https://img.icons8.com/color/48/mysql-logo.png" alt="MySQL" class="w-5 h-5"/>MySQL</span>
+                                 <span class="skill-item" style="--hover-color: #CC2927;"><img src="https://img.icons8.com/color/48/microsoft-sql-server.png" alt="SQL Server" class="w-5 h-5"/>MS SQL Server</span>
+                             </div>
+                         </div>
+                         <div class="skill-category-card" data-aos="fade-up" data-aos-delay="300">
+                               <div class="spotlight"></div>
+                               <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Tools & Methods</h3>
+                             <div class="flex flex-wrap justify-center gap-3">
+                                 <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/git.png" alt="Git" class="w-5 h-5"/>Git </span>
+                                 <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/github.png" alt="Git" class="w-5 h-5"/>GitHub</span>
+                                 <span class="skill-item" style="--hover-color: #C71A36;"><img src="https://img.icons8.com/?size=100&id=t5FJr3NzrPSm&format=png&color=000000" alt="Maven" class="w-5 h-5"/>Maven</span>
+                                 <span class="skill-item" style="--hover-color: #0052CC;"><img src="https://img.icons8.com/color/48/jira.png" alt="Jira" class="w-5 h-5"/>Jira</span>
+                                 <span class="skill-item" style="--hover-color: #2684FF;"><img src="https://img.icons8.com/color/48/trello.png" alt="Trello" class="w-5 h-5"/>Trello</span>
+                                 <span class="skill-item" style="--hover-color: #F24E1E;"><img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma" class="w-5 h-5"/>Figma</span>
+                                 <span class="skill-item" style="--hover-color: #2496ED;"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker" class="w-5 h-5"/>Docker</span>
+                                  <span class="skill-item" style="--hover-color: #25A162;"><img src="https://img.icons8.com/?size=100&id=w5Pvrwrm1sCt&format=png&color=000000" alt="JUnit" class="w-5 h-5"/>JUnit</span>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
             </section>
             
+            <!-- Projects Section -->
             <section id="projects" class="py-32" style="background: var(--bg-primary);">
                 <div class="container mx-auto px-6">
                     <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Projects</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="project-card rounded-2xl" data-aos="fade-up">
+                        
+                        <!-- NEW PROJECT: PlateShare - Gestion de Surplus Alimentaire -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="0">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://i.pinimg.com/1200x/ae/32/97/ae3297376e2f05975ebb18108e917be2.jpg" alt="PlateShare Food Management App" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                    <p class="text-white text-sm text-center">PlateShare est une application web full stack qui vise à réduire le gaspillage alimentaire en connectant les donateurs (restaurants, supermarchés) avec les demandeurs (associations, individus dans le besoin) à travers une plateforme sécurisée et efficace.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);"> PlateShare - Gestion de Surplus Alimentaire</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">Angular</span><span class="tech-badge">Spring Boot</span><span class="tech-badge">JWT</span><span class="tech-badge">MySQL</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/PlateShare" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="100">
                             <div class="project-image-container rounded-t-2xl relative">
                                 <img src="https://www.shutterstock.com/image-vector/sunburst-ray-beam-banner-quiz-260nw-2206932593.jpg" alt="Quizizz" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                    <p class="text-white text-sm text-center">Responsive quiz app with real-time trivia from the Open Trivia DB API, featuring category selection and score tracking.</p>
+                                     <p class="text-white text-sm text-center">Responsive quiz app with real-time trivia from the Open Trivia DB API, featuring category selection and score tracking.</p>
                                 </div>
                             </div>
                             <div class="p-6">
@@ -184,11 +211,11 @@
                                 <a href="https://github.com/lahcen404/Quizizz" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="200">
                             <div class="project-image-container rounded-t-2xl relative">
                                 <img src="https://images.unsplash.com/photo-1630794180018-433d915c34ac?q=80&w=2070&auto=format&fit=crop" alt="StockMaster" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                    <p class="text-white text-sm text-center">Warehouse stock management app with supplier tracking, inventory reports, and real-time database updates.</p>
+                                     <p class="text-white text-sm text-center">Warehouse stock management app with supplier tracking, inventory reports, and real-time database updates.</p>
                                 </div>
                             </div>
                             <div class="p-6">
@@ -199,11 +226,11 @@
                                 <a href="https://github.com/lahcen404/StockMaster" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="300">
                             <div class="project-image-container rounded-t-2xl relative">
                                 <img src="https://img.freepik.com/premium-vector/daily-weather-forecast-phone-app-3d-paper-cut-style-climate-atmosphere-widget-template-smartphone-meteo-condition-ui-vector-set-application-interface-with-rain-sun-clouds_102902-4959.jpg" alt="MiMeteo-App" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                    <p class="text-white text-sm text-center">Weather forecast app using external weather API with a clean and responsive interface built using Bootstrap.</p>
+                                     <p class="text-white text-sm text-center">Weather forecast app using external weather API with a clean and responsive interface built using Bootstrap.</p>
                                 </div>
                             </div>
                             <div class="p-6">
@@ -214,11 +241,11 @@
                                 <a href="https://github.com/lahcen404/MiMeteo-App" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="400">
                             <div class="project-image-container rounded-t-2xl relative">
                                 <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop" alt="BeFocused" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                    <p class="text-white text-sm text-center">Pomodoro timer app to help users stay focused and manage work sessions with break reminders.</p>
+                                     <p class="text-white text-sm text-center">Pomodoro timer app to help users stay focused and manage work sessions with break reminders.</p>
                                 </div>
                             </div>
                             <div class="p-6">
@@ -229,11 +256,11 @@
                                 <a href="https://github.com/lahcen404/BeFocusApp" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="500">
                             <div class="project-image-container rounded-t-2xl relative">
                                 <img src="https://blog.solguruz.com/wp-content/uploads/2023/11/Event-Booking-App-Development-Types-Steps-to-Build-Benefits.png" alt="HelloEvents" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                    <p class="text-white text-sm text-center">Fullstack event booking platform with user roles, event creation, and Dockerized deployment.</p>
+                                     <p class="text-white text-sm text-center">Fullstack event booking platform with user roles, event creation, and Dockerized deployment.</p>
                                 </div>
                             </div>
                             <div class="p-6">
@@ -244,11 +271,11 @@
                                 <a href="https://github.com/lahcen404/HelloEvents" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="600">
                             <div class="project-image-container rounded-t-2xl relative">
                                 <img src="https://blog.engineering.vanderbilt.edu/hubfs/AdobeStock_222740403-1.jpeg" alt="ConstructionXpert" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                    <p class="text-white text-sm text-center">Project management app tailored for construction professionals to manage tasks, workers, and project phases.</p>
+                                     <p class="text-white text-sm text-center">Project management app tailored for construction professionals to manage tasks, workers, and project phases.</p>
                                 </div>
                             </div>
                             <div class="p-6">
@@ -263,53 +290,52 @@
                 </div>
             </section>
             
+            <!-- Education & Experience Section -->
             <section id="education" class="py-32">
                 <div class="container mx-auto px-6">
                     <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Education & Experience</h2>
                     <div class="relative max-w-3xl mx-auto timeline">
+                        
+                        <!-- NEW ENTRY: YouCode Full Stack Web Developer -->
                          <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
                                 <svg class="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                             </div>
                             <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
-                                <p class="text-sm font-medium text-accent-secondary">2024 - 2025</p>
-                                <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Full Stack Developer Java JEE - Angular</h4>
-                                <p class="text-md font-medium" style="color: var(--text-secondary);">École Numérique Ahmed AL HANSALI</p>
+                                <p class="text-sm font-medium text-accent-secondary">October 2025 - Present</p>
+                                <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">YouCode Full Stack Web Developer</h4>
+                                <p class="text-md font-medium" style="color: var(--text-secondary);">YouCode</p>
                             </div>
                         </div>
+                        
+                        <!-- Existing Entry: Full Stack Developer Java JEE - Angular (Moved down) -->
+                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
+                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
+                                 <svg class="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                             </div>
+                             <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+                                 <p class="text-sm font-medium text-accent-secondary">2024 - 2025</p>
+                                 <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Full Stack Developer Java JEE - Angular</h4>
+                                 <p class="text-md font-medium" style="color: var(--text-secondary);">École Numérique Ahmed AL HANSALI</p>
+                             </div>
+                         </div>
+
+                        <!-- Existing Entry: Technical Assistant Intern -->
+                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
+                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
+                                 <svg class="w-5 h-5 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                             </div>
+                             <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+                                 <p class="text-sm font-medium text-accent-primary">Feb 2023 - May 2023</p>
+                                 <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Technical Assistant Intern</h4>
+                                 <p class="text-md font-medium mb-2" style="color: var(--text-secondary);">Association Tagzirt de Développement</p>
+                             </div>
+                         </div>
+                        
+                        <!-- Existing Entry: Specialized Technician in IT Development (Moved up from bottom) -->
                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
-                                <svg class="w-5 h-5 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
-                                <p class="text-sm font-medium text-accent-primary">Feb 2023 - May 2023</p>
-                                <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Technical Assistant Intern</h4>
-                                <p class="text-md font-medium mb-2" style="color: var(--text-secondary);">Association Tagzirt de Développement</p>
-                            </div>
-                        </div>
-                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
-                            <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
-                               <img src="https://img.icons8.com/color/48/university.png" alt="University" class="w-5 h-5"/>
-                            </div>
-                            <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
-                                <p class="text-sm font-medium text-accent-secondary">2020</p>
-                                <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">English Studies</h4>
-                                <p class="text-md font-medium" style="color: var(--text-secondary);">Sultan Moulay Slimane University</p>
-                            </div>
-                        </div>
-                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
-                            <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
-                                <img src="https://img.icons8.com/color/48/kitchen.png" alt="Cuisine" class="w-5 h-5"/>
-                            </div>
-                            <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
-                                <p class="text-sm font-medium text-accent-primary">Sep 2023 - Jul 2024</p>
-                                <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Diploma, International Cuisine</h4>
-                                <p class="text-md font-medium" style="color: var(--text-secondary);">Centre Social Multifonctionnel Al Qods</p>
-                            </div>
-                        </div>
-                         <div class="relative pl-14 timeline-item" data-aos="fade-up">
-                            <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
-                               <svg class="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                <svg class="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                             </div>
                             <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
                                 <p class="text-sm font-medium text-accent-secondary">2020 - 2022</p>
@@ -317,77 +343,103 @@
                                 <p class="text-md font-medium" style="color: var(--text-secondary);">EMSET-P Beni Mellal</p>
                             </div>
                         </div>
+
+                        <!-- Existing Entry: English Studies -->
+                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
+                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
+                                <img src="https://img.icons8.com/color/48/university.png" alt="University" class="w-5 h-5"/>
+                             </div>
+                             <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+                                 <p class="text-sm font-medium text-accent-secondary">2020</p>
+                                 <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">English Studies</h4>
+                                 <p class="text-md font-medium" style="color: var(--text-secondary);">Sultan Moulay Slimane University</p>
+                             </div>
+                         </div>
+                        
+                        <!-- Existing Entry: Diploma, International Cuisine -->
+                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
+                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
+                                 <img src="https://img.icons8.com/color/48/kitchen.png" alt="Cuisine" class="w-5 h-5"/>
+                             </div>
+                             <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+                                 <p class="text-sm font-medium text-accent-primary">Sep 2023 - Jul 2024</p>
+                                 <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Diploma, International Cuisine</h4>
+                                 <p class="text-md font-medium" style="color: var(--text-secondary);">Centre Social Multifonctionnel Al Qods</p>
+                             </div>
+                         </div>
                     </div>
                 </div>
             </section>
             
+            <!-- Contact Section -->
             <section id="contact" class="py-32" style="background: var(--bg-primary);">
                 <div class="container mx-auto px-6">
                      <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Contact me</h2>
                      <div class="max-w-3xl mx-auto rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                        <form action="https://formspree.io/f/xgvyobjv" method="POST" id="contact-form" class="contact-terminal p-6 space-y-4 rounded-lg">
-                            <div class="contact-terminal-header -m-6 mb-4 p-3 flex items-center gap-2 rounded-t-lg">
-                               <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                               <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                               <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <label class="text-green-400">lahcen@portfolio:~$</label>
-                                <input type="email" name="email" placeholder="your-email@example.com" required class="flex-1">
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <label class="text-green-400">lahcen@portfolio:~$</label>
-                                <input type="text" name="subject" placeholder="Subject" required class="flex-1">
-                            </div>
-                             <div class="flex items-start gap-4">
-                                <label class="text-green-400 pt-2">lahcen@portfolio:~$</label>
-                                <textarea name="message" rows="4" placeholder="Type your message here..." required class="flex-1 pt-2"></textarea>
-                            </div>
-                            <div class="pt-4 flex justify-end">
-                                <button type="submit"  class="py-2 px-6 rounded-md font-bold text-white transition-all duration-300" style="background: var(--accent-primary);">Send Message</button>
-                            </div>
-                        </form>
+                         <form action="https://formspree.io/f/xgvyobjv" method="POST" id="contact-form" class="contact-terminal p-6 space-y-4 rounded-lg">
+                             <div class="contact-terminal-header -m-6 mb-4 p-3 flex items-center gap-2 rounded-t-lg">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                             </div>
+                             <div class="flex items-center gap-4">
+                                 <label class="text-green-400">lahcen@portfolio:~$</label>
+                                 <input type="email" name="email" placeholder="your-email@example.com" required class="flex-1">
+                             </div>
+                             <div class="flex items-center gap-4">
+                                 <label class="text-green-400">lahcen@portfolio:~$</label>
+                                 <input type="text" name="subject" placeholder="Subject" required class="flex-1">
+                             </div>
+                              <div class="flex items-start gap-4">
+                                 <label class="text-green-400 pt-2">lahcen@portfolio:~$</label>
+                                 <textarea name="message" rows="4" placeholder="Type your message here..." required class="flex-1 pt-2"></textarea>
+                             </div>
+                             <div class="pt-4 flex justify-end">
+                                 <button type="submit"  class="py-2 px-6 rounded-md font-bold text-white transition-all duration-300" style="background: var(--accent-primary);">Send Message</button>
+                             </div>
+                         </form>
                      </div>
 
                      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                        <a href="mailto:lahcen.maskour2003@gmail.com" class="contact-card p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
-                            <img src="https://img.icons8.com/fluent/48/000000/gmail.png" alt="Email" class="w-10 h-10"/>
-                            <div>
-                                <h4 class="font-bold">Email</h4>
-                                <p class="text-sm text-accent-primary hover:underline">lahcen.maskour2003@gmail.com</p>
-                            </div>
-                        </a>
-                         <a href="tel:+212654798379" class="contact-card p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                             <img src="https://img.icons8.com/ios-filled/50/FFFFFF/phone.png" alt="Phone" class="w-10 h-10 p-2 rounded-full bg-gray-200 dark:bg-gray-700"/>
-                            <div>
-                                <h4 class="font-bold">Phone</h4>
-                                <p class="text-sm" style="color: var(--text-secondary);">+212 654798379</p>
-                            </div>
-                        </a>
-                         <div class="contact-card p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="300">
-                             <img src="https://img.icons8.com/color/48/marker.png" alt="Location" class="w-10 h-10"/>
-                            <div>
-                                <h4 class="font-bold">Location</h4>
-                                <p class="text-sm" style="color: var(--text-secondary);">Beni Mellal, Morocco</p>
-                            </div>
-                        </div>
+                         <a href="mailto:lahcen.maskour2003@gmail.com" class="contact-card p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+                             <img src="https://img.icons8.com/fluent/48/000000/gmail.png" alt="Email" class="w-10 h-10"/>
+                             <div>
+                                 <h4 class="font-bold">Email</h4>
+                                 <p class="text-sm text-accent-primary hover:underline">lahcen.maskour2003@gmail.com</p>
+                             </div>
+                         </a>
+                          <a href="tel:+212654798379" class="contact-card p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                               <img src="https://img.icons8.com/ios-filled/50/FFFFFF/phone.png" alt="Phone" class="w-10 h-10 p-2 rounded-full bg-gray-200 dark:bg-gray-700"/>
+                             <div>
+                                 <h4 class="font-bold">Phone</h4>
+                                 <p class="text-sm" style="color: var(--text-secondary);">+212 654798379</p>
+                             </div>
+                         </a>
+                          <div class="contact-card p-6 flex items-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                               <img src="https://img.icons8.com/color/48/marker.png" alt="Location" class="w-10 h-10"/>
+                             <div>
+                                 <h4 class="font-bold">Location</h4>
+                                 <p class="text-sm" style="color: var(--text-secondary);">Beni Mellal, Morocco</p>
+                             </div>
+                         </div>
                      </div>
-                </div>
+                 </div>
             </section>
         </main>
         
+        <!-- Footer -->
         <footer class="py-8 border-t" style="border-color: var(--border-color);">
              <div class="container mx-auto px-6 text-center" style="color: var(--text-secondary);">
-                <div class="flex justify-center space-x-6 mb-4">
-                    <a href="https://github.com/lahcen404" target="_blank" class="social-link" title="GitHub">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/lahcen-ait-maskour-32716422b/" target="_blank" class="social-link" title="LinkedIn">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-                    </a>
-                </div>
-                <p class="text-sm">&copy; <span id="current-year"></span> Lahcen Ait Maskour.</p>
-            </div>
+                 <div class="flex justify-center space-x-6 mb-4">
+                     <a href="https://github.com/lahcen404" target="_blank" class="social-link" title="GitHub">
+                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                     </a>
+                     <a href="https://www.linkedin.com/in/lahcen-ait-maskour-32716422b/" target="_blank" class="social-link" title="LinkedIn">
+                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                     </a>
+                 </div>
+                 <p class="text-sm">&copy; <span id="current-year"></span> Lahcen Ait Maskour.</p>
+             </div>
         </footer>
     </div>
     

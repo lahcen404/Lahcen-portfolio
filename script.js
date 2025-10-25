@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingMessages = [
         "Compiling code...",
         "Assembling modules...",
-        "Welcome to my Portfolio."
+        "Welcome to Lahcen's Portfolio."
     ];
     let msgIndex = 0;
     const loaderInterval = setInterval(() => {
