@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Element constants
     const loader = document.getElementById('loader');
     const mainContent = document.getElementById('main-content');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const menuOpenIcon = document.getElementById('menu-open-icon');
     const menuCloseIcon = document.getElementById('menu-close-icon');
-    const closeMenuButtonInside = document.getElementById('close-menu-button-inside'); 
+    const closeMenuButtonInside = document.getElementById('close-menu-button-inside');
     const mobileLinks = document.querySelectorAll('.mobile-link');
     const typedTextSpan = document.querySelector(".typing");
     const navLinks = document.querySelectorAll('.nav-link');
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (window.particlesJS) {
             const pJSElement = document.querySelector('#particles-js .particles-js-canvas-el');
-            if(pJSElement) {
-                 pJSElement.parentElement.remove();
+            if (pJSElement) {
+                pJSElement.parentElement.remove();
             }
             initParticles(isDark);
         }
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const particlesElement = document.getElementById('particles-js');
         if (particlesElement && window.particlesJS) {
             particlesJS('particles-js', {
-                "particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":color},"shape":{"type":"circle"},"opacity":{"value":0.5,"random":false},"size":{"value":3,"random":true},"line_linked":{"enable":true,"distance":150,"color":color,"opacity":0.4,"width":1},"move":{"enable":true,"speed":1,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":140,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true
+                "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": color }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": color, "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true
             });
         }
     }
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typedTextSpan) {
         const textArray = ["Full Stack Developer", "Java EE Developer", "Angular Developer"];
         let textArrayIndex = 0, charIndex = 0;
-        
+
         function type() {
             if (charIndex < textArray[textArrayIndex].length) {
                 typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex++);
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(erase, 2000);
             }
         }
-        
+
         function erase() {
             if (charIndex > 0) {
                 typedTextSpan.textContent = textArray[textArrayIndex].substring(0, --charIndex);
@@ -161,13 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         setTimeout(type, 2000);
     }
-    
+
     // --- SET CURRENT YEAR IN FOOTER ---
     const currentYearEl = document.getElementById('current-year');
     if (currentYearEl) {
         currentYearEl.textContent = new Date().getFullYear();
     }
-    
+
     // --- SKILL CARD SPOTLIGHT EFFECT ---
     skillCards.forEach(card => {
         const spotlight = card.querySelector('.spotlight');
@@ -180,4 +180,104 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    // --- CUSTOM CURSOR TRACKING ---
+    const cursor = document.getElementById('cursor');
+    const cursorBlur = document.getElementById('cursor-blur');
+    
+    if (cursor && cursorBlur) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            cursorBlur.style.left = e.clientX + 'px';
+            cursorBlur.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button, input, textarea, .project-card, .skill-item, .contact-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+                cursor.style.backgroundColor = 'var(--accent-secondary)';
+                cursor.style.borderColor = 'transparent';
+                cursorBlur.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.backgroundColor = 'transparent';
+                cursor.style.borderColor = 'var(--accent-primary)';
+                cursorBlur.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        });
+    }
+
+    // --- MAGNETIC BUTTONS (Telekinesis Hover) ---
+    const magneticElements = document.querySelectorAll('.filter-btn, .contact-card, button[type="submit"]');
+    magneticElements.forEach(elem => {
+        elem.addEventListener('mousemove', (e) => {
+            const rect = elem.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+        });
+        elem.addEventListener('mouseleave', () => {
+            elem.style.transform = `translate(0px, 0px) scale(1)`;
+        });
+    });
+
+    // --- SCROLL PROGRESS / BACK TO TOP ---
+    const scrollProgress = document.getElementById('scroll-progress');
+    const progressCircle = document.getElementById('progress-circle');
+    const circumference = 2 * Math.PI * 45; // r=45
+
+    if (scrollProgress && progressCircle) {
+        window.addEventListener('scroll', () => {
+            const scrollTotal = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = scrollTotal / height;
+            
+            progressCircle.style.strokeDashoffset = circumference - (scrollPercentage * circumference);
+
+            if (scrollTotal > 300) {
+                scrollProgress.style.opacity = '1';
+                scrollProgress.style.pointerEvents = 'auto';
+            } else {
+                scrollProgress.style.opacity = '0';
+                scrollProgress.style.pointerEvents = 'none';
+            }
+        });
+
+        scrollProgress.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        scrollProgress.addEventListener('mouseenter', () => {
+            if (cursor) cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+        });
+        scrollProgress.addEventListener('mouseleave', () => {
+            if (cursor) cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+    }
+
+    // --- VANILLA TILT INITS ---
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".project-card"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+            scale: 1.02
+        });
+        VanillaTilt.init(document.querySelectorAll(".skill-category-card"), {
+            max: 5,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.1
+        });
+        VanillaTilt.init(document.querySelector(".contact-terminal"), {
+            max: 3,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.1
+        });
+    }
 });

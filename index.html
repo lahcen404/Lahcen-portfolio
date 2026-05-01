@@ -13,11 +13,24 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
+
+    <!-- Custom Cursor (Desktop Only) -->
+    <div id="cursor" class="fixed w-5 h-5 border-2 z-[9999] mix-blend-difference rounded-full pointer-events-none transition-transform duration-100 ease-out transform -translate-x-1/2 -translate-y-1/2 hidden md:block" style="border-color: var(--accent-primary);"></div>
+    <div id="cursor-blur" class="fixed w-32 h-32 blur-xl z-[9998] rounded-full pointer-events-none transition-all duration-500 ease-out transform -translate-x-1/2 -translate-y-1/2 hidden md:block" style="background-color: var(--accent-primary); opacity: 0.2;"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" class="fixed bottom-8 right-8 z-[9000] w-12 h-12 rounded-full cursor-none opacity-0 transition-opacity duration-500 transform hover:scale-110 flex items-center justify-center pointer-events-none">
+        <svg class="w-full h-full transform -rotate-90 drop-shadow-lg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="var(--bg-secondary)" stroke="var(--border-color)" stroke-width="4"></circle>
+            <circle id="progress-circle" cx="50" cy="50" r="45" fill="none" stroke="var(--accent-primary)" stroke-width="4" stroke-dasharray="283" stroke-dashoffset="283" style="transition: stroke-dashoffset 0.1s linear; filter: drop-shadow(0 0 5px var(--accent-primary));"></circle>
+        </svg>
+        <svg class="w-5 h-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--text-primary);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path></svg>
+    </div>
 
     <!-- Loader Screen -->
     <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4">
@@ -82,8 +95,20 @@
             <!-- Hero Section -->
             <section id="home" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
                 <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+                <!-- Floating Ambient Tech Icons -->
+                <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
+                    <img src="https://img.icons8.com/color/48/angularjs.png" alt="Angular" class="absolute top-[25%] left-[12%] w-20 h-20 float-hero-anim pointer-events-auto" style="animation-delay: 0s;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="absolute top-[18%] right-[15%] w-24 h-24 float-hero-anim-reverse pointer-events-auto" style="animation-delay: 1.5s;">
+                    <img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png" alt="Java" class="absolute bottom-[25%] left-[22%] w-20 h-20 float-hero-anim pointer-events-auto" style="animation-delay: 2.5s;">
+                    <img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring Boot" class="absolute bottom-[30%] right-[20%] w-16 h-16 float-hero-anim-reverse pointer-events-auto" style="animation-delay: 0.8s;">
+                    <img src="https://img.icons8.com/color/48/vue-js.png" alt="Vue" class="absolute top-[45%] left-[5%] w-16 h-16 float-hero-anim pointer-events-auto" style="animation-delay: 3s;">
+                    <img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind" class="absolute top-[50%] right-[5%] w-14 h-14 float-hero-anim-reverse pointer-events-auto" style="animation-delay: 1.2s;">
+                    <img src="https://img.icons8.com/color/48/docker.png" alt="Docker" class="absolute bottom-[10%] right-[40%] w-20 h-20 float-hero-anim pointer-events-auto" style="animation-delay: 2s;">
+                </div>
+
                 <div class="relative z-10 p-6" data-aos="fade-up">
-                    <h1 class="text-5xl md:text-7xl font-black mb-4" style="color: var(--text-primary);">
+                    <h1 class="text-5xl md:text-7xl font-black mb-4 glitch-hover" data-text="Lahcen Ait Maskour" style="color: var(--text-primary);">
                         Lahcen Ait Maskour
                     </h1>
                     <div class="text-2xl md:text-4xl font-light mb-8" style="color: var(--text-secondary);">
@@ -91,6 +116,25 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Infinite Scroll Banner -->
+            <div class="ticker-wrap flex overflow-hidden whitespace-nowrap border-y py-6" style="border-color: var(--border-color); background: var(--bg-secondary);">
+                <div class="ticker-tape flex tracking-widest uppercase text-sm font-bold opacity-60" style="color: var(--text-primary); animation: ticker 25s linear infinite;">
+                   <span class="mx-6">FRONTEND EXCELLENCE ✦</span>
+                   <span class="mx-6">BACKEND ARCHITECTURES ✦</span>
+                   <span class="mx-6">LARAVEL MASTERY ✦</span>
+                   <span class="mx-6">ANGULAR DYNAMICS ✦</span>
+                   <span class="mx-6">SYSTEMIC UI/UX ✦</span>
+                   <span class="mx-6">DOCKER MICROSERVICES ✦</span>
+                   <!-- duplication for seamless scroll -->
+                   <span class="mx-6">FRONTEND EXCELLENCE ✦</span>
+                   <span class="mx-6">BACKEND ARCHITECTURES ✦</span>
+                   <span class="mx-6">LARAVEL MASTERY ✦</span>
+                   <span class="mx-6">ANGULAR DYNAMICS ✦</span>
+                   <span class="mx-6">SYSTEMIC UI/UX ✦</span>
+                   <span class="mx-6">DOCKER MICROSERVICES ✦</span>
+                </div>
+            </div>
             
             <!-- About Section -->
             <section id="about" class="py-32" style="background: var(--bg-primary);">
@@ -98,7 +142,7 @@
                     <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
                         <div class="lg:w-1/3" data-aos="fade-right">
                             <div class="profile-picture-container relative w-64 h-64 lg:w-80 lg:h-80 mx-auto rounded-full p-1">
-                               <img src="./97.png" alt="Lahcen Ait Maskour" class="rounded-full w-80 h-full object-cover border-4" style="border-color: var(--bg-secondary);" onerror="this.onerror=null;this.src='https://placehold.co/320x320/111827/F9FAFB?text=LAH';">
+                               <img src="PRFL-LinkedIn (Copy)-fotor-2026041395837.png" alt="Lahcen Ait Maskour" class="rounded-full w-80 h-full object-cover border-4" style="border-color: var(--bg-secondary);" onerror="this.onerror=null;this.src='https://placehold.co/320x320/111827/F9FAFB?text=LAH';">
                             </div>
                         </div>
                         <div class="lg:w-1/2 text-center lg:text-left" data-aos="fade-left" data-aos-delay="200">
@@ -115,7 +159,7 @@
                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
                                       LinkedIn
                                  </a>
-                                 <a href="CV Lahcen Dev.pdf" download="CV-Lahcen-Ait-Maskour.pdf" class="py-4 px-5 rounded-full font-bold text-sm text-white transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));">
+                                 <a href="FR-LAHCEN_AIT_MASKOUR_CV.pdf" download="FR-LAHCEN_AIT_MASKOUR_CV.pdf" class="py-4 px-5 rounded-full font-bold text-sm text-white transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));">
                                       Download CV
                                     </a>
                              </div>
@@ -134,13 +178,14 @@
                              <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Frontend</h3>
                              <div class="flex flex-wrap justify-center gap-3">
                                  <span class="skill-item" style="--hover-color: #DD0031;"><img src="https://img.icons8.com/color/48/angularjs.png" alt="Angular" class="w-5 h-5"/>Angular</span>
+                                 <span class="skill-item" style="--hover-color: #41B883;"><img src="https://img.icons8.com/color/48/vue-js.png" alt="Vue.js" class="w-5 h-5"/>Vue.js</span>
                                  <span class="skill-item" style="--hover-color: #F7DF1E;"><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript" class="w-5 h-5"/>JavaScript</span>
                                  <span class="skill-item" style="--hover-color: #3178C6;"><img src="https://img.icons8.com/color/48/typescript.png" alt="TypeScript" class="w-5 h-5"/>TypeScript</span>
+                                 <span class="skill-item" style="--hover-color: #5A29E4;"><img src="https://cdn.simpleicons.org/axios/5A29E4" alt="Axios" class="w-5 h-5"/>Axios</span>
                                  <span class="skill-item" style="--hover-color: #E34F26;"><img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML5" class="w-5 h-5"/>HTML5</span>
                                  <span class="skill-item" style="--hover-color: #1572B6;"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS3" class="w-5 h-5"/>CSS3</span>
                                  <span class="skill-item" style="--hover-color: #06B6D4;"><img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind CSS" class="w-5 h-5"/>Tailwind CSS</span>
                                  <span class="skill-item" style="--hover-color: #7952B3;"><img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap" class="w-5 h-5"/>Bootstrap</span>
-                                 <span class="skill-item" style="--hover-color: #3f51b5;"><img src="https://img.icons8.com/color/48/material-ui.png" alt="Material UI" class="w-5 h-5"/>Material UI</span>
                              </div>
                          </div>
                           <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
@@ -149,24 +194,32 @@
                                <div class="flex flex-wrap justify-center gap-3">
                                  <span class="skill-item" style="--hover-color: #f89820;"><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png" alt="Java" class="w-5 h-5"/>Java/JEE</span>
                                  <span class="skill-item" style="--hover-color: #6DB33F;"><img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring" class="w-5 h-5"/>SpringBoot</span>
-                                 <span class="skill-item" style="--hover-color: #6DB33F;"><img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring Security" class="w-5 h-5"/>Spring Security</span>
-                                 <span class="skill-item" style="--hover-color: #e84d1f;"><img src="https://img.icons8.com/?size=100&id=rHpveptSuwDz&format=png&color=000000" alt="JWT" class="w-5 h-5"/>JWT Security</span>
+                                 <span class="skill-item" style="--hover-color: #59666C;"><img src="https://img.icons8.com/ios-filled/50/hibernate.png" alt="Hibernate" class="w-5 h-5"/>JPA/Hibernate</span>
+                                 <span class="skill-item" style="--hover-color: #777BB3;"><img src="https://img.icons8.com/ios-filled/50/777BB3/php-logo.png" alt="PHP" class="w-5 h-5"/>PHP</span>
+                                 <span class="skill-item" style="--hover-color: #F05340;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="w-5 h-5"/>Laravel</span>
                                  <span class="skill-item" style="--hover-color: #4479A1;"><img src="https://img.icons8.com/color/48/mysql-logo.png" alt="MySQL" class="w-5 h-5"/>MySQL</span>
-                                 <span class="skill-item" style="--hover-color: #CC2927;"><img src="https://img.icons8.com/color/48/microsoft-sql-server.png" alt="SQL Server" class="w-5 h-5"/>MS SQL Server</span>
+                                 <span class="skill-item" style="--hover-color: #336791;"><img src="https://img.icons8.com/color/48/postgreesql.png" alt="PostgreSQL" class="w-5 h-5"/>PostgreSQL</span>
+                                 <span class="skill-item" style="--hover-color: #e84d1f;"><img src="https://img.icons8.com/color/48/api-settings.png" alt="API REST" class="w-5 h-5"/>API REST</span>
+                                 <span class="skill-item" style="--hover-color: #4A90E2;"><img src="https://img.icons8.com/ios-filled/50/server.png" alt="Microservices" class="w-5 h-5"/>Microservices</span>
                              </div>
                          </div>
                          <div class="skill-category-card" data-aos="fade-up" data-aos-delay="300">
                                <div class="spotlight"></div>
                                <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--text-primary);">Tools & Methods</h3>
                              <div class="flex flex-wrap justify-center gap-3">
-                                 <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/git.png" alt="Git" class="w-5 h-5"/>Git </span>
-                                 <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/github.png" alt="Git" class="w-5 h-5"/>GitHub</span>
-                                 <span class="skill-item" style="--hover-color: #C71A36;"><img src="https://img.icons8.com/?size=100&id=t5FJr3NzrPSm&format=png&color=000000" alt="Maven" class="w-5 h-5"/>Maven</span>
+                                 <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/git.png" alt="Git" class="w-5 h-5"/>Git</span>
+                                 <span class="skill-item" style="--hover-color: #fa7500;"><img src="https://img.icons8.com/ios-filled/50/github.png" alt="GitHub" class="w-5 h-5"/>GitHub</span>
+                                 <span class="skill-item" style="--hover-color: #2496ED;"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker" class="w-5 h-5"/>Docker</span>
+                                 <span class="skill-item" style="--hover-color: #009639;"><img src="https://img.icons8.com/color/48/nginx.png" alt="Nginx" class="w-5 h-5"/>Nginx</span>
+                                 <span class="skill-item" style="--hover-color: #D22128;"><img src="https://cdn.simpleicons.org/apache/D22128" alt="Apache" class="w-5 h-5"/>Apache</span>
+                                 <span class="skill-item" style="--hover-color: #D33833;"><img src="https://img.icons8.com/color/48/jenkins.png" alt="Jenkins" class="w-5 h-5"/>Jenkins</span>
+                                 <span class="skill-item" style="--hover-color: #4E9BCD;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sonarqube/sonarqube-original.svg" alt="SonarQube" class="w-5 h-5"/>SonarQube</span>
+                                 <span class="skill-item" style="--hover-color: #85EA2D;"><img src="https://cdn.simpleicons.org/swagger/85EA2D" alt="Swagger" class="w-5 h-5"/>Swagger</span>
+                                 <span class="skill-item" style="--hover-color: #FF6C37;"><img src="https://img.icons8.com/dusk/64/postman-api.png" alt="Postman" class="w-5 h-5"/>Postman</span>
+                                 <span class="skill-item" style="--hover-color: #336791;"><img src="https://img.icons8.com/ios-filled/50/database.png" alt="PgAdmin" class="w-5 h-5"/>PgAdmin</span>
                                  <span class="skill-item" style="--hover-color: #0052CC;"><img src="https://img.icons8.com/color/48/jira.png" alt="Jira" class="w-5 h-5"/>Jira</span>
                                  <span class="skill-item" style="--hover-color: #2684FF;"><img src="https://img.icons8.com/color/48/trello.png" alt="Trello" class="w-5 h-5"/>Trello</span>
-                                 <span class="skill-item" style="--hover-color: #F24E1E;"><img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma" class="w-5 h-5"/>Figma</span>
-                                 <span class="skill-item" style="--hover-color: #2496ED;"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker" class="w-5 h-5"/>Docker</span>
-                                  <span class="skill-item" style="--hover-color: #25A162;"><img src="https://img.icons8.com/?size=100&id=w5Pvrwrm1sCt&format=png&color=000000" alt="JUnit" class="w-5 h-5"/>JUnit</span>
+                                 <span class="skill-item" style="--hover-color: #25A162;"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19v-4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M12 4v9M8 4l4-4 4 4"/></svg>Scrum / UML</span>
                              </div>
                          </div>
                      </div>
@@ -176,89 +229,125 @@
             <!-- Projects Section -->
             <section id="projects" class="py-32" style="background: var(--bg-primary);">
                 <div class="container mx-auto px-6">
-                    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Projects</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <h2 class="text-4xl font-bold text-center mb-8 gradient-text" data-aos="fade-up">Projects</h2>
+                    
+                    <!-- Filter Navigation -->
+                    <div class="flex justify-center flex-wrap gap-4 mb-12" data-aos="fade-up">
+                        <button class="filter-btn active px-6 py-2 rounded-full border border-gray-600 transition" data-filter="all" style="background: var(--bg-secondary); border-color: var(--accent-primary);">All</button>
+                        <button class="filter-btn px-6 py-2 rounded-full border border-gray-600 transition" data-filter="java" style="background: var(--bg-secondary);">Java / Spring</button>
+                        <button class="filter-btn px-6 py-2 rounded-full border border-gray-600 transition" data-filter="angular" style="background: var(--bg-secondary);">Angular</button>
+                        <button class="filter-btn px-6 py-2 rounded-full border border-gray-600 transition" data-filter="php" style="background: var(--bg-secondary);">PHP / Laravel</button>
+                        <button class="filter-btn px-6 py-2 rounded-full border border-gray-600 transition" data-filter="other" style="background: var(--bg-secondary);">Other</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
                         
-                        <!-- NEW PROJECT: PlateShare - Gestion de Surplus Alimentaire -->
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="0">
+                        <!-- KasbahTrek -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="0" data-category="php">
                             <div class="project-image-container rounded-t-2xl relative">
-                                <img src="https://i.pinimg.com/1200x/ae/32/97/ae3297376e2f05975ebb18108e917be2.jpg" alt="PlateShare Food Management App" class="project-image w-full h-48 object-cover">
+                                <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&q=80&w=800" alt="KasbahTrek" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                    <p class="text-white text-sm text-center">PlateShare est une application web full stack qui vise à réduire le gaspillage alimentaire en connectant les donateurs (restaurants, supermarchés) avec les demandeurs (associations, individus dans le besoin) à travers une plateforme sécurisée et efficace.</p>
+                                    <p class="text-white text-sm text-center">A tourism platform connecting travelers, verified guides, and admins to promote regional tours. Features role-based management, booking systems, and interactive UI.</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);"> PlateShare - Gestion de Surplus Alimentaire</h3>
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">KasbahTrek</h3>
                                 <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-badge">Angular</span><span class="tech-badge">Spring Boot</span><span class="tech-badge">JWT</span><span class="tech-badge">MySQL</span>
+                                    <span class="tech-badge">Laravel</span><span class="tech-badge">Vue.js</span><span class="tech-badge">Tailwind</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/KasbahTrek" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- LocalMind-v2 -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="100" data-category="php">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="LocalMind-v2" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">Community web application where users ask location-based questions. Fully dockerized microservices architecture with a reverse proxy.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">LocalMind-v2</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">Laravel</span><span class="tech-badge">Vue.js</span><span class="tech-badge">Docker</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/LocalMind-v2" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Foodieland -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="200" data-category="angular">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&q=80&w=800" alt="Foodieland" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">Modern full-stack web application for recipe discovery and management. Containerized API backend with a high-performance frontend.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Foodieland</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">Angular 21</span><span class="tech-badge">Laravel 8.2</span><span class="tech-badge">Docker</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/Foodieland" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- EcoShop -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="300" data-category="php">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800" alt="EcoShop" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">Modern API-first e-commerce platform dedicated to selling eco-friendly products.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">EcoShop</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span><span class="tech-badge">E-Commerce</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/EcoShop" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- LMind-V2 -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="400" data-category="php">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="LMind-V2" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">Internal pedagogical debriefing system. Allows tracking, measuring, and analyzing student progress through competencies and briefs.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">LMind-V2</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">Laravel</span><span class="tech-badge">MVC</span><span class="tech-badge">MySQL</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/LMind-V2" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- PlateShare -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="500" data-category="java">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&q=80&w=800" alt="PlateShare" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">PlateShare est une application web full stack qui vise à réduire le gaspillage alimentaire en connectant les donateurs avec les demandeurs.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">PlateShare</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">Angular</span><span class="tech-badge">Spring Boot</span><span class="tech-badge">JWT</span>
                                 </div>
                                 <a href="https://github.com/lahcen404/PlateShare-FileRouge" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
 
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                        <!-- HelloEvents -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="0" data-category="java">
                             <div class="project-image-container rounded-t-2xl relative">
-                                <img src="https://www.shutterstock.com/image-vector/sunburst-ray-beam-banner-quiz-260nw-2206932593.jpg" alt="Quizizz" class="project-image w-full h-48 object-cover">
-                                <div class="project-overlay">
-                                     <p class="text-white text-sm text-center">Responsive quiz app with real-time trivia from the Open Trivia DB API, featuring category selection and score tracking.</p>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Quizizz</h3>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-badge">Angular</span><span class="tech-badge">TypeScript</span><span class="tech-badge">Tailwind</span>
-                                </div>
-                                <a href="https://github.com/lahcen404/Quizizz" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
-                            </div>
-                        </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                            <div class="project-image-container rounded-t-2xl relative">
-                                <img src="https://images.unsplash.com/photo-1630794180018-433d915c34ac?q=80&w=2070&auto=format&fit=crop" alt="StockMaster" class="project-image w-full h-48 object-cover">
-                                <div class="project-overlay">
-                                     <p class="text-white text-sm text-center">Warehouse stock management app with supplier tracking, inventory reports, and real-time database updates.</p>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">StockMaster</h3>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-badge">Java EE</span><span class="tech-badge">JSP</span><span class="tech-badge">MySQL</span>
-                                </div>
-                                <a href="https://github.com/lahcen404/StockMaster" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
-                            </div>
-                        </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="300">
-                            <div class="project-image-container rounded-t-2xl relative">
-                                <img src="https://img.freepik.com/premium-vector/daily-weather-forecast-phone-app-3d-paper-cut-style-climate-atmosphere-widget-template-smartphone-meteo-condition-ui-vector-set-application-interface-with-rain-sun-clouds_102902-4959.jpg" alt="MiMeteo-App" class="project-image w-full h-48 object-cover">
-                                <div class="project-overlay">
-                                     <p class="text-white text-sm text-center">Weather forecast app using external weather API with a clean and responsive interface built using Bootstrap.</p>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">MiMeteo-App</h3>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-badge">HTML</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">JavaScript</span>
-                                </div>
-                                <a href="https://github.com/lahcen404/MiMeteo-App" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
-                            </div>
-                        </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="400">
-                            <div class="project-image-container rounded-t-2xl relative">
-                                <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop" alt="BeFocused" class="project-image w-full h-48 object-cover">
-                                <div class="project-overlay">
-                                     <p class="text-white text-sm text-center">Pomodoro timer app to help users stay focused and manage work sessions with break reminders.</p>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">BeFocused App</h3>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-badge">JavaScript</span><span class="tech-badge">HTML</span><span class="tech-badge">Bootstrap</span>
-                                </div>
-                                <a href="https://github.com/lahcen404/BeFocusApp" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
-                            </div>
-                        </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="500">
-                            <div class="project-image-container rounded-t-2xl relative">
-                                <img src="https://blog.solguruz.com/wp-content/uploads/2023/11/Event-Booking-App-Development-Types-Steps-to-Build-Benefits.png" alt="HelloEvents" class="project-image w-full h-48 object-cover">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800" alt="HelloEvents" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
                                      <p class="text-white text-sm text-center">Fullstack event booking platform with user roles, event creation, and Dockerized deployment.</p>
                                 </div>
@@ -271,19 +360,89 @@
                                 <a href="https://github.com/lahcen404/HelloEvents" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
-                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="600">
+
+                        <!-- EasyColoc -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="100" data-category="php">
                             <div class="project-image-container rounded-t-2xl relative">
-                                <img src="https://blog.engineering.vanderbilt.edu/hubfs/AdobeStock_222740403-1.jpeg" alt="ConstructionXpert" class="project-image w-full h-48 object-cover">
+                                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="EasyColoc" class="project-image w-full h-48 object-cover">
                                 <div class="project-overlay">
-                                     <p class="text-white text-sm text-center">Project management app tailored for construction professionals to manage tasks, workers, and project phases.</p>
+                                     <p class="text-white text-sm text-center">Laravel web application that helps roommates manage shared expenses and automatically calculate balances.</p>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">ConstructionXpert</h3>
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">EasyColoc</h3>
                                 <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-badge">Java</span><span class="tech-badge">MySQL</span><span class="tech-badge">Full-Stack</span>
+                                    <span class="tech-badge">Laravel</span><span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span>
                                 </div>
-                                <a href="https://github.com/lahcen404/ConstructionXpert" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                                <a href="https://github.com/lahcen404/EasyColoc" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- StockMaster -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="200" data-category="java">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800" alt="StockMaster" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">Warehouse stock management app with supplier tracking, inventory reports, and real-time database updates.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">StockMaster</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">Java EE</span><span class="tech-badge">JSP</span><span class="tech-badge">MySQL</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/StockMaster" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- UniLib -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="300" data-category="php">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800" alt="UniLib" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">PHP-based library management app that handles authors, books, and loans using OOP and MySQL.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">UniLib</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">PHP</span><span class="tech-badge">OOP</span><span class="tech-badge">MySQL</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/UniLib" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Quizizz -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="400" data-category="angular">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=800" alt="Quizizz" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">Responsive quiz app with real-time trivia from the Open Trivia DB API, featuring category selection and score tracking.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Quizizz</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">Angular</span><span class="tech-badge">TypeScript</span><span class="tech-badge">Tailwind</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/Quizizz" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- MiMeteo-App -->
+                        <div class="project-card rounded-2xl" data-aos="fade-up" data-aos-delay="500" data-category="other">
+                            <div class="project-image-container rounded-t-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=800" alt="MiMeteo-App" class="project-image w-full h-48 object-cover">
+                                <div class="project-overlay">
+                                     <p class="text-white text-sm text-center">Weather forecast app using external weather API with a clean and responsive interface built using Bootstrap.</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">MiMeteo-App</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tech-badge">JavaScript</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">Weather API</span>
+                                </div>
+                                <a href="https://github.com/lahcen404/MiMeteo-App" target="_blank" class="font-bold text-sm" style="color: var(--accent-primary);">View on GitHub &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -350,21 +509,9 @@
                                 <img src="https://img.icons8.com/color/48/university.png" alt="University" class="w-5 h-5"/>
                              </div>
                              <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
-                                 <p class="text-sm font-medium text-accent-secondary">2020</p>
+                                 <p class="text-sm font-medium text-accent-secondary">2020 - 2023</p>
                                  <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">English Studies</h4>
                                  <p class="text-md font-medium" style="color: var(--text-secondary);">Sultan Moulay Slimane University</p>
-                             </div>
-                         </div>
-                        
-                        <!-- Existing Entry: Diploma, International Cuisine -->
-                         <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
-                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
-                                 <img src="https://img.icons8.com/color/48/kitchen.png" alt="Cuisine" class="w-5 h-5"/>
-                             </div>
-                             <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
-                                 <p class="text-sm font-medium text-accent-primary">Sep 2023 - Jul 2024</p>
-                                 <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Diploma, International Cuisine</h4>
-                                 <p class="text-md font-medium" style="color: var(--text-secondary);">Centre Social Multifonctionnel Al Qods</p>
                              </div>
                          </div>
                     </div>
@@ -445,7 +592,43 @@
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project-card');
 
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => {
+                        b.style.borderColor = 'gray';
+                        b.classList.remove('active');
+                    });
+                    btn.style.borderColor = 'var(--accent-primary)';
+                    btn.classList.add('active');
+                    
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    projects.forEach(project => {
+                        if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                            project.style.display = 'block';
+                            setTimeout(() => {
+                                project.style.opacity = '1';
+                                project.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            project.style.opacity = '0';
+                            project.style.transform = 'scale(0.9)';
+                            setTimeout(() => {
+                                project.style.display = 'none';
+                            }, 400);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
