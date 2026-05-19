@@ -19,6 +19,73 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main section');
     const skillCards = document.querySelectorAll('.skill-category-card');
 
+    // --- PROJECT BADGE ICONS ---
+    const techIconMap = {
+        'Laravel': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',
+        'Vue.js': 'https://img.icons8.com/color/48/vue-js.png',
+        'Vue': 'https://img.icons8.com/color/48/vue-js.png',
+        'Tailwind': 'https://img.icons8.com/color/48/tailwind_css.png',
+        'Tailwind CSS': 'https://img.icons8.com/color/48/tailwind_css.png',
+        'Docker': 'https://img.icons8.com/color/48/docker.png',
+        'Angular': 'https://img.icons8.com/color/48/angularjs.png',
+        'Angular 21': 'https://img.icons8.com/color/48/angularjs.png',
+        'PHP': 'https://img.icons8.com/ios-filled/50/777BB3/php-logo.png',
+        'MySQL': 'https://img.icons8.com/color/48/mysql-logo.png',
+        'E-Commerce': 'https://img.icons8.com/fluency/48/shopping-bag.png',
+        'MVC': 'https://img.icons8.com/fluency/48/layers.png',
+        'Spring Boot': 'https://img.icons8.com/color/48/spring-logo.png',
+        'JWT': 'https://img.icons8.com/fluency/48/lock--v1.png',
+        'Java EE': 'https://img.icons8.com/color/48/java-coffee-cup-logo.png',
+        'JSP': 'https://img.icons8.com/fluency/48/code.png',
+        'JavaScript': 'https://img.icons8.com/color/48/javascript--v1.png',
+        'Bootstrap': 'https://img.icons8.com/color/48/bootstrap.png',
+        'TypeScript': 'https://img.icons8.com/color/48/typescript.png',
+        'Weather API': 'https://img.icons8.com/color/48/partly-cloudy-day--v1.png',
+        'OOP': 'https://img.icons8.com/fluency/48/code.png'
+    };
+
+    document.querySelectorAll('.tech-badge').forEach(badge => {
+        const label = badge.textContent.trim();
+        const iconUrl = techIconMap[label];
+
+        if (iconUrl && !badge.querySelector('img')) {
+            const icon = document.createElement('img');
+            icon.src = iconUrl;
+            icon.alt = label;
+            icon.className = 'tech-badge-icon';
+            badge.prepend(icon);
+        }
+    });
+
+    // --- CREATIVE REVEAL ANIMATIONS ---
+    const revealTargets = [
+        '#about h2', '#about p', '#about a',
+        '#skills .skill-category-card', '#skills .skill-item',
+        '#projects .project-card', '#projects .tech-badge',
+        '#education .timeline-item',
+        '#contact .contact-card', '#contact .contact-terminal',
+        '#home h1', '#home .typing', '.ticker-wrap'
+    ];
+
+    const uniqueRevealElements = [...new Set(revealTargets.flatMap(selector => Array.from(document.querySelectorAll(selector))))];
+
+    uniqueRevealElements.forEach((element, index) => {
+        element.classList.add('creative-reveal');
+        element.classList.add('creative-stagger');
+        element.style.setProperty('--reveal-delay', `${Math.min(index * 80, 560)}ms`);
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    uniqueRevealElements.forEach(element => revealObserver.observe(element));
+
     // --- Creative Loader Script ---
     const loadingMessages = [
         "Compiling code...",
