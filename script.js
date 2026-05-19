@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- TYPEWRITER EFFECT ---
     if (typedTextSpan) {
-        const textArray = ["Full Stack Developer", "Java EE Developer", "Angular Developer"];
+        const textArray = ["Full Stack Developer", "Web Developer", "Software Developer"];
         let textArrayIndex = 0, charIndex = 0;
 
         function type() {

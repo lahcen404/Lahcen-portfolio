@@ -72,24 +72,25 @@
                 </div>
             </nav>
             
-            <div id="nav-menu" class="hidden fixed inset-0 z-50 transition-opacity duration-300">
-                
-                <button id="close-menu-button-inside" class="absolute top-5 right-7 p-2 text-white">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-                
-                <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl font-medium">
-                    <a href="#home" class="nav-link mobile-link">Home</a>
-                    <a href="#about" class="nav-link mobile-link">About</a>
-                    <a href="#skills" class="nav-link mobile-link">Skills</a>
-                    <a href="#projects" class="nav-link mobile-link">Projects</a>
-                    <a href="#education" class="nav-link mobile-link">Education</a>
-                    <a href="#contact" class="nav-link mobile-link">Contact</a>
-                </div>
-            </div>
         </header>
+
+        <div id="nav-menu" class="hidden fixed inset-0 z-[9999] transition-opacity duration-300 overflow-y-auto" style="background-color: rgba(17, 24, 39, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+            
+            <button id="close-menu-button-inside" class="fixed top-5 right-7 z-[10000] p-2 text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <div class="flex min-h-full flex-col items-center justify-start gap-8 px-6 py-24 text-2xl font-medium">
+                <a href="#home" class="nav-link mobile-link">Home</a>
+                <a href="#about" class="nav-link mobile-link">About</a>
+                <a href="#skills" class="nav-link mobile-link">Skills</a>
+                <a href="#projects" class="nav-link mobile-link">Projects</a>
+                <a href="#education" class="nav-link mobile-link">Education</a>
+                <a href="#contact" class="nav-link mobile-link">Contact</a>
+            </div>
+        </div>
 
         <main>
             <!-- Hero Section -->
@@ -455,6 +456,18 @@
                     <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Education & Experience</h2>
                     <div class="relative max-w-3xl mx-auto timeline">
                         
+                        <!-- NEW ENTRY: YouCode Full Stack Web Developer -->
+                        <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
+                            <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">
+                                <svg class="w-5 h-5 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            </div>
+                            <div class="p-6 rounded-lg" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+                                <p class="text-sm font-medium text-accent-primary">May 2026 - July 2026</p>
+                                <h4 class="text-xl font-bold mt-1" style="color: var(--text-primary);">Full Stack Developer Intern</h4>
+                                <p class="text-md font-medium" style="color: var(--text-secondary);">Digital Speak Group</p>
+                            </div>
+                        </div>
+
                         <!-- NEW ENTRY: YouCode Full Stack Web Developer -->
                          <div class="relative pl-14 mb-12 timeline-item" data-aos="fade-up">
                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full timeline-item-dot">

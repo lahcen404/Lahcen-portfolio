@@ -62,7 +62,6 @@
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
      background-clip: text;
-     text-fill-color: transparent;
  }
 
  /* --- Header & Nav --- */
@@ -117,6 +116,8 @@
      /* Adjusted for better dark theme visibility */
      backdrop-filter: blur(10px);
      -webkit-backdrop-filter: blur(10px);
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
  }
 
  .dark #nav-menu {
